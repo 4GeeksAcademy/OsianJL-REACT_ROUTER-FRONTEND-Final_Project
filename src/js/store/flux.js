@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavouritePlanet :async (id)=>{
 				let token = localStorage.getItem("token")
 				try {
-					const response = await fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/favorites/planet/${id}`, 
+					const response = await fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/favorites/planet/${id}`, 
 					
 					{
 						method: "POST",
@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavouriteCharacter :async (id)=>{
 				let token = localStorage.getItem("token")
 				try {
-					const response = await fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/favorites/character/${id}`, 
+					const response = await fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/favorites/character/${id}`, 
 					
 					{
 						method: "POST",
@@ -74,7 +74,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addFavouriteStarship :async (id)=>{
 				let token = localStorage.getItem("token")
 				try {
-					const response = await fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/favorites/starship/${id}`, 
+					const response = await fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/favorites/starship/${id}`, 
 					
 					{
 						method: "POST",
@@ -100,7 +100,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getFavorites: async () => {
 				let token = localStorage.getItem("token")
 				try  {
-					const response = await fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/user/favorites", 
+					const response = await fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/user/favorites", 
 					{
 						method: "GET",
 						headers: {
@@ -128,7 +128,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			deleteFavourite: async (id) => {
 				let token = localStorage.getItem("token")
 				try {
-					const response = await fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/favorites/${id}`, 
+					const response = await fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/favorites/${id}`, 
 					{
 						method: "DELETE",
 						headers: {
@@ -148,7 +148,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			getPeople: () => {
-					fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/all_characters")
+					fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/all_characters")
 						.then(res => res.json())
 						.then(data => setStore({ people: data.results }))
 						.catch(err => console.error(err))
@@ -156,7 +156,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			 getPeopleFeatures: (id) => {
 			 	
-			 	fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/characters/${id}`)
+			 	fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/characters/${id}`)
 			.then(res => res.json())
 			.then(data => setStore({ peopleFeatures: data.results }))
 			// .then(data => console.log(data))
@@ -167,7 +167,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanets: () => {
 
-				fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/all_planets")
+				fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/all_planets")
 					.then(res => res.json())
 					.then(data => setStore({ planets: data.results }))
 					.catch(err => console.error(err))
@@ -176,7 +176,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanetsFeatures: (id) => {
 			 	
-				fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/planets/${id}`)
+				fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/planets/${id}`)
 		   .then(res => res.json())
 		   .then(data => setStore({ planetsFeatures: data.results }))
 		   .catch(err => console.error(err))}, 
@@ -184,7 +184,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getStarships: () => {
 
-				fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/all_starships")
+				fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/all_starships")
 					.then(res => res.json())
 					.then(data => setStore({ starships: data.results }))
 					.catch(err => console.error(err))
@@ -193,7 +193,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getStarshipsFeatures: (id) => {
 			 	
-				fetch(`https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/starships/${id}`)
+				fetch(`https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/starships/${id}`)
 		   .then(res => res.json())
 		   .then(data => setStore({ starshipsFeatures: data.results }))
 		   .catch(err => console.error(err))}, 
@@ -201,7 +201,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			login: async (email, password) => {
 				try  {
-					const response = await fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/login", 
+					const response = await fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/login", 
 					{
 						method: "POST",
 						headers: {
@@ -233,7 +233,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			signUp: async (firstName, lastName,email, password) => {
 				try  {
-					const response = await fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/signup", 
+					const response = await fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/signup", 
 					{
 						method: "POST",
 						headers: {
@@ -249,7 +249,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					const data = await response.json()
 					if (response.status == 200) {
-						localStorage.setItem("token", data.access_token)
+						// localStorage.setItem("token", data.access_token)
 					}
 					console.log(data)
 					return true;
@@ -265,7 +265,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			validToken: async () => {
 				let token = localStorage.getItem("token")
 				try  {
-					const response = await fetch("https://silver-computing-machine-69994949r4g63rrw7-3000.app.github.dev/valid-token", 
+					const response = await fetch("https://vigilant-doodle-9777j7j7q6wwh6qg-3000.app.github.dev/valid-token", 
 					{
 						method: "GET",
 						headers: {

@@ -70,7 +70,7 @@ export const Starships = () => {
 				</div>
 			</div>
 			<div className="footer__card">
-			<Link to="/home">
+			<Link to="/">
 				<button className="btn btn-secondary">Back home</button>
 			</Link>
 				<button className="btn btn-secondary me-3" onClick={() => actions.addFavouriteStarship(storeStarships.id)}>Add to Favorites</button>

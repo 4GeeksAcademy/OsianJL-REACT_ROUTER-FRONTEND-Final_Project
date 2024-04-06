@@ -63,7 +63,7 @@ export const Planets = () => {
 				</div>
 			</div>
 			<div className="footer__card">
-			<Link to="/home">
+			<Link to="/">
 				<button className="btn btn-secondary">Back home</button>
 			</Link>
 				<button className="btn btn-secondary me-3" onClick={() => actions.addFavouritePlanet(storePlanets.id)}>Add to Favorites</button>

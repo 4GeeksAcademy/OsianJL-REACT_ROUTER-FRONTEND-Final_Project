@@ -105,3 +105,12 @@ form {
 .login-logo {
     color: white;
 }
+
+.navdiv__1 {
+    align-items: left;
+}
+
+.navdiv__2 {
+    display: flex; 
+    align-content: flex-end;
+}

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/demo.css";
 import { Context } from "../store/appContext"
-import starwarslogo from '../../img/starwarslogo.png'
+import starwarsyellow from '../../img/starwarslogo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
@@ -19,35 +19,39 @@ export const Navbar = () => {
 
 	console.log(store.counter);
 
-	const handleLogout = () =>   {
+	const handleLogout = () => {
 		localStorage.removeItem("token");
 		navigate("/login")
 	}
 
 	return (
 
-		<nav className="navbar bg-dark mb-3">
-
-			<div className="col-4 d-flex justify-content-center">
-				<Link to={"/"} style={{ textDecoration: 'none', color: "white" }} >
-					<span className="navbar-brand mb-0 h1 ms-5" >Home</span>
+		<nav class="navbar bg-dark border-bottom border-body p-0" data-bs-theme="dark">
+			<div className="container-fluid p-0">
+				<Link to={"/"} style={{ textDecoration: 'none', color: "white"}} >
+					<img src={starwarsyellow} alt="Logo" style={{ width: "180px", height: "90px" }} className="d-inline-block align-text-center" />
+					<span className="navbar-brand ms-5">Home</span>
+					{store.auth ? <div className="d-inline-block align-text-center"><Link to={"/favorites"} style={{ textDecoration: 'none', color: "white"}}>
+						<span className="navbar-brand ms-5">Your Favorites</span>
+					</Link></div> : null}
 				</Link>
+				<div className="d-inline-block align-text-center">
+					<Link to={"/login"} style={{ textDecoration: 'none', textAlign: "center" }}>
+						<span className="login-link">Log In</span>
+					</Link>
+					<span className="login-link" onClick={handleLogout}>Log Out</span>
+				</div>
 			</div>
-			<div className="col-4 d-flex justify-content-center">
-				{store.auth ? <Link to={"/favorites"}>
-					<button class="btn btn-secondary m-3" style={{ width: "200px" }} type="button">
-						Your Favorites
-					</button>
-				</Link> : null}
-			</div>
-			<div className="col-4 d-flex justify-content-center">
-				<Link to={"/login"} style={{ textDecoration: 'none', textAlign: "center" }}>
-					<span className="login-link">Log In</span>
-				</Link>
-				<span className="login-link" onClick={handleLogout}>Log Out</span>
-			</div>
-
 		</nav>
+
+
+
+		// 		
+		// 		
+		// 		
+		// 		
+
+
 
 	);
 };

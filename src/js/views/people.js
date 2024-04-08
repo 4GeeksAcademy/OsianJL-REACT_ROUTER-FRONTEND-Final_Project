@@ -35,8 +35,11 @@ export const People = () => {
 			<div className="card mb-3" style={{ width: "1100px" }}>
 				<div className="row g-0">
 					<div className="col-md-4">
-						<img style={{ width: "600px", height: "250px" }} src={imagePeopleUrls[id - 5]} className="img-fluid rounded-start" alt="..." />
+						{imagePeopleUrls[parseInt(id)] && (
+							<img src={imagePeopleUrls[parseInt(id) - 1]} style={{ width: "600px", height: "250px" }} className="img-fluid rounded-start" alt="..." />
+						)}
 					</div>
+
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title">{storePeople.name}</h5>
@@ -50,7 +53,7 @@ export const People = () => {
 								laborum ex id eum officiis! Excepturi modi assumenda incidunt eum  </p>
 
 						</div>
-						
+
 					</div>
 					<div className="red-line mt-3"></div>
 					<div className="mini-container d-flex justify-content-evenly mt-3">
@@ -64,11 +67,11 @@ export const People = () => {
 				</div>
 			</div>
 			<div className="footer__card">
-			<Link to="/">
-				<button className="btn btn-secondary">Back home</button>
-			</Link>
+				<Link to="/">
+					<button className="btn btn-secondary">Back home</button>
+				</Link>
 				<button className="btn btn-secondary me-3" onClick={() => actions.addFavouriteCharacter(storePeople.id)}>Add to Favorites</button>
-				</div>
+			</div>
 		</div>
 	);
 };

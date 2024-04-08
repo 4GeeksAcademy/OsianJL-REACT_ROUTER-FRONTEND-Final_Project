@@ -41,8 +41,11 @@ export const Starships = () => {
 			<div className="card mb-3" style={{ width: "1100px" }}>
 				<div className="row g-0">
 					<div className="col-md-4">
-						<img style={{ width: "600px", height: "250px" }} src={imageStarshipsUrls[id - 6]} className="img-fluid rounded-start" alt="..." />
+						{imageStarshipsUrls[parseInt(id)] && (
+							<img src={imageStarshipsUrls[parseInt(id)]} style={{ width: "600px", height: "250px" }} className="img-fluid rounded-start" alt="..." />
+						)}
 					</div>
+
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title">{storeStarships.name}</h5>
@@ -70,11 +73,11 @@ export const Starships = () => {
 				</div>
 			</div>
 			<div className="footer__card">
-			<Link to="/">
-				<button className="btn btn-secondary">Back home</button>
-			</Link>
+				<Link to="/">
+					<button className="btn btn-secondary">Back home</button>
+				</Link>
 				<button className="btn btn-secondary me-3" onClick={() => actions.addFavouriteStarship(storeStarships.id)}>Add to Favorites</button>
-				</div>
+			</div>
 		</div>
 	);
 };

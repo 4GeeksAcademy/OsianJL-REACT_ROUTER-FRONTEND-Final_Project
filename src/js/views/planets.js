@@ -17,39 +17,42 @@ const imagePlanetsUrls = [
 ];
 
 export const Planets = () => {
-	const {id} = useParams();
+	const { id } = useParams();
 	const { store, actions } = useContext(Context);
-	
 
-		useEffect(() => {
+
+	useEffect(() => {
 		actions.getPlanetsFeatures(id);
 
 	}, []);
 	console.log(store.planetsFeatures);
 
-	const storePlanets = store.planetsFeatures; 
+	const storePlanets = store.planetsFeatures;
 
 	return (
 		<div className="container">
 			<div className="card mb-3" style={{ width: "1100px" }}>
 				<div className="row g-0">
 					<div className="col-md-4">
-						<img style={{ width: "600px", height: "250px" }} src={imagePlanetsUrls[id-7]} className="img-fluid rounded-start" alt="..." />
+						{imagePlanetsUrls[parseInt(id)] && (
+							<img src={imagePlanetsUrls[parseInt(id)]} style={{ width: "600px", height: "250px" }} className="img-fluid rounded-start" alt="..." />
+						)}
 					</div>
+
 					<div className="col-md-8">
 						<div className="card-body">
 							<h5 className="card-title">{storePlanets.name}</h5>
 							<p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							 Totam, tempora, porro ipsa sed quo autem illo reiciendis dolores repudiandae, modi
-							  laborum ex id eum officiis! Excepturi modi assumenda incidunt eum.Lorem ipsum dolor 
-							  sit amet consectetur adipisicing elit. Totam, tempora, porro ipsa sed quo autem illo 
-							  reiciendis dolores repudiandae, modi laborum ex id eum officiis! Excepturi modi assumenda 
-							  incidunt eum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							 Totam, tempora, porro ipsa sed quo autem illo reiciendis dolores repudiandae, modi
-							  laborum ex id eum officiis! Excepturi modi assumenda incidunt eum  </p>
-							
+								Totam, tempora, porro ipsa sed quo autem illo reiciendis dolores repudiandae, modi
+								laborum ex id eum officiis! Excepturi modi assumenda incidunt eum.Lorem ipsum dolor
+								sit amet consectetur adipisicing elit. Totam, tempora, porro ipsa sed quo autem illo
+								reiciendis dolores repudiandae, modi laborum ex id eum officiis! Excepturi modi assumenda
+								incidunt eum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+								Totam, tempora, porro ipsa sed quo autem illo reiciendis dolores repudiandae, modi
+								laborum ex id eum officiis! Excepturi modi assumenda incidunt eum  </p>
+
 						</div>
-						
+
 					</div>
 					<div className="red-line mt-3"></div>
 					<div className="mini-container d-flex justify-content-evenly mt-3">
@@ -63,11 +66,11 @@ export const Planets = () => {
 				</div>
 			</div>
 			<div className="footer__card">
-			<Link to="/">
-				<button className="btn btn-secondary">Back home</button>
-			</Link>
+				<Link to="/">
+					<button className="btn btn-secondary">Back home</button>
+				</Link>
 				<button className="btn btn-secondary me-3" onClick={() => actions.addFavouritePlanet(storePlanets.id)}>Add to Favorites</button>
-				</div>
+			</div>
 		</div>
 	);
 };

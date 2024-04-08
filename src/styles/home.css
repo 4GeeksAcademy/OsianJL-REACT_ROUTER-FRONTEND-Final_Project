@@ -1,5 +1,6 @@
 .card-group {
     margin: 20px;
+    /* height: 400px; */
 }
 
 
@@ -49,7 +50,7 @@ p{
 
 .boton-learn:hover{
     color: white;
-    background-color: blue;
+    background-color: rgb(85, 85, 96);
 }
 .boton-learn:active{
   color: red; 
@@ -60,3 +61,11 @@ p{
     justify-content: space-between;
 }
 
+.underline {
+    border-bottom: 2px solid rgb(139, 37, 37);
+}
+
+.card-boot {
+    color: rgb(139, 37, 37);
+    text-align: center; 
+}
